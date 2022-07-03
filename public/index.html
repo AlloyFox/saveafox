@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/public/js/app.js"></script>
+  <link href="/public/css/styles.css" rel="stylesheet">
+  <link href="/public/css/darkmode.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- <script>
+    // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+    // Whenever the user explicitly chooses light mode
+    localStorage.theme = 'light'
+    // Whenever the user explicitly chooses dark mode
+    localStorage.theme = 'dark'
+    // Whenever the user explicitly chooses to respect the OS preference
+    localStorage.removeItem('theme')    
+</script> -->
+</head>
+
+<body class="w-screen bg-white dark:bg-darkcolor transition-colors duration-300">
+    <header class="h-[650px] laptop:h-[750px] laptop:px-0 max-w-[1550px] m-auto bg-[url('/public/assets/img/header_mobile.webp')] laptop:bg-[url('/public/assets/img/header_web1.webp')] bg-center laptop:bg-center bg-no-repeat bg-[length:900px] tablet:bg-[length:1000px] laptop:bg-[length:1600px] relative z-1">
+        <nav class="nav w-full flex items-center justify-between h-24 px-8 bg-white dark:bg-darkcolor transition-colors duration-300">
+            <img class="dark:hidden w-48 mr-5 z-10" src="/public/assets/img/logo.svg" alt="">
+            <img class="hidden dark:block w-48 mr-5 z-10" src="/public/assets/img/logo_dark.svg" alt="">
+            <!-- MENU DESKTOP TABLET -->
+            <div class="flex flex-col bg-slate-900 laptop:flex fixed top-0 right-0 h-full w-full z-0" id="nav">
+                <ul class="flex flex-col p-24 laptop:flex-row items-center gap-10 mr-10 font-normal text-gray-700 dark:text-gray-300">
+                    <li>
+                        <a class="transition hover:text-amber-500" href="">Home</a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-amber-500" href="">About</a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-amber-500" href="">Our team</a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-amber-500" href="">Sponsor</a>
+                    </li>
+                    <li>
+                        <a class="transition hover:text-amber-500" href="">Shop</a>
+                    </li>
+                    <li>
+                        <a class="btn-fill" href="">Contact</a>
+                    </li>
+                </ul>
+                <div class="flex">
+                    <!-- <input id="theme-toggle" class="toggle" type="checkbox">
+
+                    <button type="button" id="theme-toggle" class="flex items-center justify-center px-6 py-2 pl-6 pr-6 transition duration-300 rounded">
+                        <i id="theme-toggle-dark-icon" class="text-2xl fa-solid fa-moon before:hidden text-midnight dark:text-gray-200"></i>
+                        <img loading="lazy" id="theme-toggle-light-icon"  class="hidden w-6 text-midnight dark:text-amber-500" src="/public/assets/icons/sun.png" alt="icon light mode">
+                    </button> -->
+                    <input type="checkbox" id="theme-toggle">
+                    <label for="theme-toggle">
+                      <i class="fa-solid fa-sun"></i>
+                      <i class="fa-solid fa-moon"></i>
+                    </label>
+                
+                </div>
+            </div>
+            <!-- MENU MOBILE -->
+            <div class="tham tham-e-squeeze tham-w-6 laptop:hidden" id="btnNav">
+                <div class="tham-box">
+                  <div class="tham-inner" />
+                </div>
+            </div>
+        </nav>
+        <div></div>
+        <section class="flex flex-col gap-6 px-8 pt-16 laptop:pt-32 pb-32 laptop:pb-0 tablet:pt-32  ">            
+            <div class="flex flex-col gap-6 w-full tablet:w-full laptop:w-5/12 desktop:w-5/12">
+                <h1 class="text-5xl laptop:text-6xl font-bold laptop:font-extrabold text-white laptop:text-midnight dark:text-gray-300">You Can Help to <span class="text-white laptop:text-amber-500 "> Save a Fox</span></h1>
+                <div class="m-0 p-0 w-fit">
+                    <p class="text-base font-normal tracking-widest text-white laptop:text-midnight-light dark:text-gray-300">MESSAGE FROM <span class="font-medium">SAM LEAN</span> FOUNDER </p>
+                    <hr class="border-2 border-amber-400 bg-amber-400">
+                </div>
+                <p class="text-base text-white laptop:text-midnight-light dark:text-gray-300">
+                    We are a non-profit organization faithfully dedicated to rescuing foxes by providing them with a safe haven and giving them the necessary care so as not to endanger the species and to adapt them for adoption.
+                </p>
+            </div>
+            <div class="flex flex-row gap-5">
+                <a class="btn-fill" href="">Join Our Team</a>
+                <a class="btn-box border-white text-white laptop:text-midnight laptop:border-midnight" href="">Donate</a>
+            </div>
+        </section>
+    </header>
+    <section class="flex items-center justify-center tablet:pt-8">
+        <div class="flex flex-col tablet:flex-row tablet:flex-wrap tablet:justify-center tablet:gap-y-6 tablet:gap-x-6 laptop:gap-x-0 laptop:flex-row justify-center divide-y-2 tablet:divide-y-0 laptop:divide-y-0 laptop:divide-x-2 divide-gray-200 dark:divide-gray-800 divide-inherit transition-none px-8">
+            <div class="flex justify-between h-24 w-60 desktop:w-auto laptop:px-8">
+                <div class="flex items-center gap-6 tablet:flex-row">
+                    <div class="flex items-center justify-center flex-grow-0 flex-shrink-0 w-16 h-16 border-2 border-gray-200 dark:border-gray-800 transition-colors duration-300 rounded-full">
+                        <img loading="lazy" class="w-8 p-0 m-0 text-midnight" src="/public/assets/icons/heart.png" alt="icon light mode">
+                    </div>
+                    <div class="tablet:text-center desktop:text-left dark:text-gray-300">
+                        <p class="text-xl font-bold">900+</p>
+                        <p class="text-base">Foxes Rescued</p>
+                    </div>
+                </div>
+            </div>    
+            <div class="flex justify-between h-24 w-60 desktop:w-auto laptop:px-8">
+                <div class="flex items-center gap-6 tablet:flex-row">
+                    <div class="flex items-center justify-center flex-grow-0 flex-shrink-0 w-16 h-16 border-2 border-gray-200 dark:border-gray-800 transition-colors duration-300 rounded-full">
+                        <img loading="lazy" class="w-8 p-0 m-0 text-midnight" src="/public/assets/icons/pin.png" alt="icon light mode">
+                    </div>
+                    <div class="tablet:text-center desktop:text-left dark:text-gray-300">
+                        <p class="text-xl font-bold">160+</p>
+                        <p class="text-base">Different Locations</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between h-24 w-60 desktop:w-auto laptop:px-8">
+                <div class="flex items-center gap-6 tablet:flex-row">
+                    <div class="flex items-center justify-center flex-grow-0 flex-shrink-0 w-16 h-16 border-2 border-gray-200 dark:border-gray-800 transition-colors duration-300 rounded-full">
+                        <img loading="lazy" class="w-8 p-0 m-0 text-midnight" src="/public/assets/icons/user.png" alt="icon light mode">
+                    </div>
+                    <div class="tablet:text-center desktop:text-left dark:text-gray-300">
+                        <p class="text-xl font-bold">30+</p>
+                        <p class="text-base">Our Team Members</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-between h-24 w-60 desktop:w-auto laptop:px-8">
+                <div class="flex items-center gap-6 tablet:flex-row">
+                    <div class="flex items-center justify-center flex-grow-0 flex-shrink-0 w-16 h-16 border-2 border-gray-200 dark:border-gray-800 transition-colors duration-300 rounded-full">
+                        <img loading="lazy" class="w-8 p-0 m-0 text-midnight" src="/public/assets/icons/ribbon.png" alt="icon light mode">
+                    </div>
+                    <div class="tablet:text-center desktop:text-left dark:text-gray-300">
+                        <p class="text-xl font-bold">15+</p>
+                        <p class="text-base">Years of experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <main class="m-auto max-w-screen">
+        <section class="max-w-[1550px] m-auto mt-8 px-8 laptop:px-8 desktop:px-0">
+            <div class="pt-8">
+                <div class="pb-12 text-center">
+                    <h2 class="text-h2 laptop:text-h2 dark:text-gray-300">What is Save a Fox</h2>
+                </div>
+                <div class="flex flex-col gap-6 m-auto laptop:flex-row">
+                    <div class="flex flex-col justify-center w-full text-left gap-6">
+                        <div class="w-fit hidden laptop:block ">
+                            <h3 class="font-semibold text-h3 pb-0 dark:text-gray-300">We rescue foxes from fur farms and elsewhere.</h3> 
+                        </div>
+                        <p class="text-base text-midnight-light text-center laptop:text-left dark:text-gray-300">
+                            The purpose of this website is not for profit of any kind. It is to educate people on the suffering of an animal that is perpetuated by the fur trade. Join with  in helping save these beautiful animals. I do not breed my foxes. I only rescue them to take care of any health issues, spay, or neuter and find them good homes.
+                        </p>
+                    </div>
+                    <div class="flex justify-center w-full desktop:w-auto m-0">
+                        <iframe class="rounded-xl" width="580" height="320" src="https://www.youtube.com/embed/QN9BptZM22g" title="Welcome to SAVEAFOX" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="m-auto bg-gray-100 max-w-screen px-8 tablet:px-8 dark:bg-darkcolor">
+            <div class="max-w-[1550px] m-auto mt-12 pt-14">
+                <div class="pb-8 text-center">
+                    <h2 class="text-h2 dark:text-gray-300">Our rescue process</h2>
+                    <p class="pt-8 text-base text-p dark:text-gray-300">Let's choose the package that is best for you and explora it happily and cheerfully.</p>
+                </div>
+                <!-- one -->
+                <div class="flex flex-col laptop:flex-row gap-6 m-auto">
+                    <div class="text-left w-full laptop:w-1/2 flex flex-col justify-center bg-[url('/public/assets/icons/1.svg')] bg-no-repeat bg-right-top">
+                        <h2 class="font-semibold text-h3 pb-0 dark:text-gray-300">Rescue and care of baby foxes</h2>
+                        <p class="text-xl font-medium text-amber-500 pt-2">Preparation and care of fox cubs</p>
+                        <p class="text-base text-midnight-light pt-4 dark:text-gray-300">
+                            We prepare for fox cubs by having all the necessary supplies such as medicine, feeding syringes, teats and blankets. When we rescue foxes older than 7 weeks, we need ample space and regular veterinary appointments to ensure the safety and well-being of our puppies.
+                        </p>
+                    </div>
+                    <img loading="lazy" class="object-cover w-full laptop:w-1/2 rounded-xl " src="/public/assets/img/img02.webp" alt="">
+                </div>
+            </div>
+            <!-- two -->
+            <div class="max-w-[1550px] m-auto mt-12 pt-14">
+                <div class="flex flex-col laptop:flex-row gap-6 m-auto">
+                    <div class="text-left w-full laptop:w-1/2 flex flex-col justify-center bg-[url('/public/assets/icons/2.svg')] bg-no-repeat bg-right-top laptop:order-2">
+                        <h2 class="font-semibold text-h3 pb-0 dark:text-gray-300">We rescue foxes from anywhere</h2>
+                        <p class="text-xl font-medium text-amber-500 pt-2">Rescuing and helping</p>
+                        <p class="text-base text-midnight-light pt-4 dark:text-gray-300">
+                            We rescue foxes from many different situations. We rescue sick, injured, and orphaned foxes from furfarms. Ones that the farmers believe would not make it. We take in surrendered foxes that were once pets and originally came from breeders. We also take in and rescue found pet foxes.
+                        </p>
+                    </div>
+                    <img loading="lazy" class="object-cover w-full laptop:w-1/2 rounded-xl laptop:order-1 " src="/public/assets/img/anywhere.webp" alt="">
+                </div>
+            </div>
+            <!-- three -->
+            <div class="max-w-[1550px] m-auto mt-12 pt-14">
+                <div class="flex flex-col laptop:flex-row gap-6 m-auto">
+                    <div class="text-left w-full laptop:w-1/2 flex flex-col justify-center bg-[url('/public/assets/icons/3.svg')] bg-no-repeat bg-right-top">
+                        <h2 class="font-semibold text-h3 pb-0 dark:text-gray-300">Give love and domesticate</h2>
+                        <p class="text-xl font-medium text-amber-500 pt-2">Love and affection</p>
+                        <p class="pb-4 text-base text-midnight-light pt-4 dark:text-gray-300">
+                            The foxes we rescue need love to thrive. Without love, they grow wild and unmanageable, they are animals that need a lot of attention to be given love and play, not everyone is suited to care for a fox, if you are interested you can learn more with our guide on "How to care for a fox".
+                        </p>
+                        <div class="w-56 pb-4">
+                            <a class="btn-box" href="#">More Information</a>
+                        </div>
+                    </div>
+                    <img loading="lazy" class="object-cover rounded-xl laptop:w-1/2 " src="/public/assets/img/givelove.webp" alt="">
+                </div>
+            </div>
+            <!-- four -->
+            <div class="max-w-[1550px] m-auto mt-12 pt-14">
+                <div class="flex flex-col laptop:flex-row gap-6 m-auto">
+                    <div class="text-left w-full laptop:w-1/2 flex flex-col justify-center bg-[url('/public/assets/icons/4.svg')] bg-no-repeat bg-right-top laptop:order-2">
+                        <h2 class="font-semibold text-h3 pb-0 dark:text-gray-300">Find an ideal owner for each fox</h2>
+                        <p class="text-xl font-medium text-amber-500 pt-2">Adopt and find a home</p>
+                        <p class="text-base text-midnight-light pt-4 dark:text-gray-300">
+                            Our goal is to give all the foxes we rescue up for adoption. Some foxes I rescue tend to be more feral by nature; Those are the foxes I would choose not to adopt. But we do our best to make them human-friendly and safe.
+                        </p>
+                    </div>
+                    <img loading="lazy" class="object-cover w-full rounded-xl laptop:w-1/2 laptop:order-1 " src="/public/assets/img/img_01.webp" alt="">
+                </div>
+            </div>
+        </section>
+        <section class="bg-gray-100 max-w-screen dark:bg-darkcolor">
+            <div class="max-w-[1550px] m-auto pt-28 pb-28 px-8">
+                <div class="pb-8 text-center">
+                    <h2 class="text-h2 dark:text-gray-300">How you can help?</h2>
+                    <p class="px-4 pt-8 text-base text-p dark:text-gray-300">I'm very thankful for each and every person that has given to SaveAFox cause. Below are the three ways you can help rescue foxes from fur farms.</p>
+                </div>
+                <div class="flex flex-col laptop:flex-row content-between items-center h-auto gap-6 desktop:justify-center">
+                    <div class="flex flex-col items-center gap-4 px-10 py-10 transition bg-white tablet:w-96 rounded-xl hover:shadow-lg hover:shadow-gray-200 dark:bg-gray-900 dark:hover:shadow-black">
+                        <img class="w-16" src="/public/assets/icons/heart.webp" alt="icon heart">
+                        <h3 class="text-2xl font-bold uppercase text-midnight dark:text-gray-300">Donate</h3>
+                        <p class="text-base text-center text-midnight-light dark:text-gray-300">Donate to help fund the sanctuary so we can continue to keep up with the foxes care and needs.</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 px-10 py-10 transition bg-white tablet:w-96 rounded-xl hover:shadow-lg hover:shadow-gray-200 dark:bg-gray-900 dark:hover:shadow-black">
+                        <img class="w-16" src="/public/assets/icons/diamond.svg" alt="icon diamons">
+                        <h3 class="text-2xl font-bold uppercase text-midnight dark:text-gray-300">Sponsor</h3>
+                        <p class="text-base text-center text-midnight-light dark:text-gray-300">Donate to help fund the sanctuary so we can continue to keep up with the foxes care and needs.</p>
+                    </div>
+                    <div class="flex flex-col items-center gap-4 px-10 py-10 transition bg-white tablet:w-96 rounded-xl hover:shadow-lg hover:shadow-gray-200 dark:bg-gray-900 dark:hover:shadow-black">
+                        <img class="w-16" src="/public/assets/icons/house.webp" alt="icon house">
+                        <h3 class="text-2xl font-bold uppercase text-midnight dark:text-gray-300">Adopt</h3>
+                        <p class="text-base text-center text-midnight-light dark:text-gray-300">Donate to help fund the sanctuary so we can continue to keep up with the foxes care and needs.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="bg-slate-100 max-w-screen dark:bg-darkcolor">
+            <div class="max-w-[1550px] m-auto pb-28 px-8">
+                <div class="flex flex-col items-center gap-10 text-center desktop:px-32">
+                    <img class="w-16" src="/public/assets/icons/shield.webp" alt="">
+                    <h2 class="text-h2 dark:text-gray-300">Fight to save a fox</h2>
+                    <p class="text-base text-center text-midnight-light dark:text-gray-300">
+                        Foxes are suffering at fur farms. But you can help! I encourage you to take a look at the pictures of what it is like for a fox at the fur farm. By making a donation you can help the already rescued fur farm foxes thrive. Without donations, I cannot keep up with all the food, medical expenses, and housing for these foxes. Or YOU can rescue your own fur farm fox by adopting or sponsoring.
+                    </p>
+                    <p class="text-base text-center text-midnight-light dark:text-gray-300">
+                        Although fur farms are not illegal in the USA you can still help bring an end to the fur industry simply by not buying fur. Eighty-five percent of fur available for purchase comes from the animals living in the fur industry with the fox being one of the most commonly used.
+                    </p>
+                    <div class="flex flex-row gap-20">
+                        <a class="btn-fill" href="#">Join Our Team</a>
+                        <a class="btn-box" href="#">Donate</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer class="bg-white max-w-screen dark:bg-darkcolor">
+            <div class="flex flex-col laptop:flex-row max-w-[1550px] py-16 items-center laptop:items-start laptop:justify-center m-auto px-8 laptop:gap-8">
+                <div class="w-full laptop:w-1/3 flex flex-col items-center pb-8">
+                    <img class="dark:hidden pb-6" src="/public/assets/img/logo.svg" alt="">
+                    <img class="hidden dark:block pb-6" src="/public/assets/img/logo_dark.svg" alt="">
+                    <p class="w-full text-base text-center text-midnight-light dark:text-gray-300">
+                        We are a non-profit organization faithfully dedicated to rescuing foxes by providing them with a safe haven and giving them the necessary care so as not to endanger the species and to adapt them for adoption. 
+                    </p>
+                </div>
+                <div class="flex flex-wrap justify-between w-full laptop:w-auto gap-y-8 laptop:gap-x-8">
+                    <div class="flex flex-col gap-3 dark:text-gray-300">
+                        <h4 class="pb-1 text-lg font-bold text-midnight dark:text-gray-300">About us</h4>
+                        <a class="text-base" href="#">Objetive</a>
+                        <a class="text-base" href="#">Our Team</a>
+                        <a class="text-base" href="#">Founders</a>
+                        <a class="text-base" href="#">Blog</a>
+                        <a class="text-base" href="#">Countries</a>
+                        <a class="text-base" href="#">Sanctuary</a>
+                    </div>
+                    <div class="flex flex-col gap-3 dark:text-gray-300">
+                        <h4 class="pb-1 text-lg font-bold text-midnight dark:text-gray-300">Useful Links</h4>
+                        <a class="text-base" href="#">Tours</a>
+                        <a class="text-base" href="#">Volunteer</a>
+                        <a class="text-base" href="#">Donate</a>
+                        <a class="text-base" href="#">Sponsor</a>
+                        <a class="text-base" href="#">Foxes at fur farms</a>
+                        <a class="text-base" href="#">Fox & mink care</a>
+                    </div>
+                    <div class="flex flex-col gap-3 dark:text-gray-300">
+                        <h4 class="pb-1 text-lg font-bold text-midnight dark:text-gray-300">Tour</h4>
+                        <a class="text-base" href="#">Seasons</a>
+                        <a class="text-base" href="#">Virtual Tour</a>
+                        <a class="text-base" href="#">Availability</a>
+                        <a class="text-base" href="#">Rules</a>
+                        <a class="text-base" href="#">Princing</a>
+                        <a class="text-base" href="#">Cautions</a>
+                    </div>
+                    <div class="flex flex-col gap-3 dark:text-gray-300">
+                        <h4 class="pb-1 text-lg font-bold text-midnight dark:text-gray-300">Our Sanctuary</h4>
+                        <p>Minnesota, Heart Fox St.</p>
+                        <p>Sol-ait 290 345 Av</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col justify-between items-center h-auto max-w-[1550px] m-auto gap-6 pb-4">
+                <div class="flex flex-col justify-center order-2">
+                    <p class="text-base text-midnight dark:text-gray-300">
+                        © All Right Reserved 2022 -  SaveAFox Organization.
+                    </p>
+                </div>
+                <div class="flex flex-row items-center gap-4 order-1">
+                    <div class="items-center justify-center flex-grow-0 flex-shrink-0 p-3 bg-white rounded-full shadow-lg dark:bg-gray-900">
+                        <img class="w-6" src="/public/assets/icons/linkedin.webp" alt="">
+                    </div>
+                    <div class="items-center justify-center flex-grow-0 flex-shrink-0 p-3 bg-white rounded-full shadow-lg dark:bg-gray-900">
+                        <img class="w-6" src="/public/assets/icons/facebook.png" alt="">
+                    </div>
+                    <div class="items-center justify-center flex-grow-0 flex-shrink-0 p-3 bg-white rounded-full shadow-lg dark:bg-gray-900">
+                        <img class="w-6" src="/public/assets/icons/twitter.png" alt="">
+                    </div>
+                    <div class="items-center justify-center flex-grow-0 flex-shrink-0 p-3 bg-white rounded-full shadow-lg dark:bg-gray-900">
+                        <img class="w-6" src="/public/assets/icons/instagram.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+    </main>
+    <script src="/public/js/app.js"></script>
+</body>
+</html>
