@@ -29,12 +29,14 @@
 
 <body class="w-screen bg-white dark:bg-darkcolor transition-colors duration-300">
     <header class="h-[650px] laptop:h-[750px] laptop:px-0 max-w-[1550px] m-auto bg-[url('/public/assets/img/header_mobile.webp')] laptop:bg-[url('/public/assets/img/header_web1.webp')] bg-center laptop:bg-center bg-no-repeat bg-[length:900px] tablet:bg-[length:1000px] laptop:bg-[length:1600px] relative z-1">
-        <nav class="nav w-full flex items-center justify-between h-24 px-8 bg-white dark:bg-darkcolor transition-colors duration-300">
-            <img class="dark:hidden w-48 mr-5 z-10" src="/public/assets/img/logo.svg" alt="">
-            <img class="hidden dark:block w-48 mr-5 z-10" src="/public/assets/img/logo_dark.svg" alt="">
+        
+        <nav class="w-full relative flex items-center justify-between h-24 px-8 bg-white dark:bg-darkcolor transition duration-300" >
+
+            <img class="dark:hidden w-40 tablet:w-48 mr-0 tablet:mr-5 z-10" src="/public/assets/img/logo.svg" alt="">
+            <img class="hidden dark:block w-40 tablet:w-48 mr-0 tablet:mr-5 z-10" src="/public/assets/img/logo_dark.svg" alt="">
             <!-- MENU DESKTOP TABLET -->
-            <div class="flex flex-col bg-slate-900 laptop:flex fixed top-0 right-0 h-full w-full z-0" id="nav">
-                <ul class="flex flex-col p-24 laptop:flex-row items-center gap-10 mr-10 font-normal text-gray-700 dark:text-gray-300">
+            <div class="flex flex-col laptop:flex-row bg-white fixed laptop:relative top-0 laptop:top-auto right-0 laptop:right-auto h-full laptop:h-auto w-72 laptop:w-auto translate-x-full laptop:translate-x-0 transition duration-300 z-0 dark:bg-darkcolor" id="nav">
+                <ul class="flex flex-col laptop:flex-row items-start laptop:items-center gap-10 mr-10 font-normal text-gray-700 dark:text-gray-300 mt-24 laptop:mt-0 pl-8 ">
                     <li>
                         <a class="transition hover:text-amber-500" href="">Home</a>
                     </li>
@@ -54,27 +56,25 @@
                         <a class="btn-fill" href="">Contact</a>
                     </li>
                 </ul>
-                <div class="flex">
-                    <!-- <input id="theme-toggle" class="toggle" type="checkbox">
-
-                    <button type="button" id="theme-toggle" class="flex items-center justify-center px-6 py-2 pl-6 pr-6 transition duration-300 rounded">
-                        <i id="theme-toggle-dark-icon" class="text-2xl fa-solid fa-moon before:hidden text-midnight dark:text-gray-200"></i>
-                        <img loading="lazy" id="theme-toggle-light-icon"  class="hidden w-6 text-midnight dark:text-amber-500" src="/public/assets/icons/sun.png" alt="icon light mode">
-                    </button> -->
-                    <input type="checkbox" id="theme-toggle">
-                    <label for="theme-toggle">
-                      <i class="fa-solid fa-sun"></i>
-                      <i class="fa-solid fa-moon"></i>
-                    </label>
-                
+                <div class="div items-center hidden laptop:flex">		
+                    <input class="input" type="checkbox" id="toggle" onChange="toggled(this)"/>
+                    <label class="label" for="toggle"></label>
                 </div>
             </div>
             <!-- MENU MOBILE -->
-            <div class="tham tham-e-squeeze tham-w-6 laptop:hidden" id="btnNav">
-                <div class="tham-box">
-                  <div class="tham-inner" />
+            <div class="flex items-center justify-between gap-6 laptop:hidden">
+                <div class="div">		
+                    <input class="input" type="checkbox" id="toggle2" onChange="toggled(this)"/>
+                    <label class="label" for="toggle2"></label>
+                </div>
+                <!-- <input class="toggleDarkMode" type="checkbox"> -->
+                <div class="tham tham-e-squeeze tham-w-6 laptop:hidden hover:opacity-100" id="btnNav">
+                    <div class="tham-box">
+                      <div class="tham-inner bg-midnight dark:bg-gray-300" />
+                    </div>
                 </div>
             </div>
+            
         </nav>
         <div></div>
         <section class="flex flex-col gap-6 px-8 pt-16 laptop:pt-32 pb-32 laptop:pb-0 tablet:pt-32  ">            
